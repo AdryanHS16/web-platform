@@ -1,15 +1,16 @@
 import { Container } from '@/components/ui/Container'
+import { Heading } from '@/components/ui/Heading'
 
 export function Hero() {
   return (
     <section className="py-24">
       <Container>
-        <h1 className="text-5xl font-bold leading-tight max-w-3xl">
+        <Heading as="h1" className="max-w-2xl">
           Renew your mindset.
-        </h1>
+        </Heading>
 
-        <p className="mt-6 text-lg text-neutral-400 max-w-xl">
-          A journey of self-development, clarity and purpose.
+        <p className="mt-4 text-neutral-400 max-w-xl">
+          A space to rethink habits, focus and purpose.
         </p>
       </Container>
     </section>
