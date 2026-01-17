@@ -21,7 +21,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-28 border-t border-neutral-800">
+    <section className="py-20 md:py-28 border-t border-neutral-800">
       <Container>
         <Heading as="h2" className="max-w-2xl">
           What people are saying
@@ -31,9 +31,9 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="rounded-lg border border-neutral-800 p-6"
+              className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6"
             >
-              <p className="text-neutral-300">
+              <p className="text-sm md:text-base text-neutral-200">
                 “{testimonial.text}”
               </p>
 
