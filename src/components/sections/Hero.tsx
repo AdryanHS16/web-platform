@@ -9,7 +9,7 @@ export function Hero() {
           Renew your mindset.
         </Heading>
 
-        <p className="mt-6 text-lg text-neutral-400 max-w-xl">
+        <p className="mt-6 text-lg text-neutral-300 max-w-xl">
           A space to rethink habits, focus and purpose.
         </p>
       </Container>

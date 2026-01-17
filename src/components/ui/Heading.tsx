@@ -5,10 +5,10 @@ type HeadingProps = {
 }
 
 const styles = {
-  h1: 'text-5xl md:text-6xl font-semibold leading-[1.1]',
-  h2: 'text-3xl md:text-4xl font-semibold leading-tight',
-  h3: 'text-2xl font-semibold',
-  h4: 'text-xl font-medium',
+  h1: 'text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight',
+  h2: 'text-3xl md:text-4xl font-semibold leading-tight tracking-tight',
+  h3: 'text-xl font-medium',
+  h4: 'text-lg font-medium',
 }
 
 export function Heading({

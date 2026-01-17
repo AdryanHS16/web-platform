@@ -3,7 +3,7 @@ import { Heading } from '@/components/ui/Heading'
 
 export function About() {
   return (
-    <section className="py-24 border-t border-neutral-800">
+    <section className="py-28 border-t border-neutral-800">
       <Container>
         <Heading as="h2" className="max-w-2xl">
           About the journey
