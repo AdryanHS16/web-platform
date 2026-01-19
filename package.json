@@ -22,5 +22,11 @@
     "eslint-config-next": "16.1.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    }
   }
 }
