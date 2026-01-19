@@ -1,4 +1,5 @@
 import './globals.css'
+import { Header } from '@/components/sections/Header'
 
 export const metadata = {
   title: 'Renewed Mindset',
@@ -13,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="bg-neutral-950 text-neutral-100 antialiased">
+        <Header />
         {children}
       </body>
     </html>
