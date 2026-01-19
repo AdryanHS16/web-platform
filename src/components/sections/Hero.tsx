@@ -3,7 +3,7 @@ import { Heading } from '@/components/ui/Heading'
 
 export function Hero() {
   return (
-    <section className="pt-24 pb-20 md:pt-32 md:pb-24">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48">
       <Container>
         <Heading as="h1" className="max-w-xl md:max-w-3xl">
           Renew your mindset.
