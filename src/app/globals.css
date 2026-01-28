@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 /* Paleta de cores do projeto */
-:root {
-
+@theme {
   /* Primary Colors */
   --color-primary-1: #5cf28e;
   --color-primary-2: #50c878;
