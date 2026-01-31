@@ -9,8 +9,8 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-                heading: ['var(--font-space)', 'system-ui', 'sans-serif'],
+                sans: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
+                heading: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
             },
         },
     },
