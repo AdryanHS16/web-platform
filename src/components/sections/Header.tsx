@@ -1,62 +1,92 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Container } from "../ui/Container";
-import { Logo } from "@/assets/img/Logo";
-import Button from "./buttons";
+import { Container, Logo, Button } from "@/components/ui";
 
 const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "About", href: "#about" },
-  { label: "Blog", href: "/blog" },
+  { label: "Services", href: "#services", isAnchor: true },
+  { label: "Work", href: "#work", isAnchor: true },
+  { label: "Testimonials", href: "#testimonials", isAnchor: true },
+  { label: "About", href: "/about", isAnchor: false },
+  { label: "Blog", href: "/blog", isAnchor: false },
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Previne scroll do body quando menu mobile está aberto
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+  const getHref = (item: typeof navItems[0]) => {
+    if (item.isAnchor && pathname !== "/") {
+      return `/${item.href}`;
     }
+    return item.href;
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
   }, [isMobileMenuOpen]);
 
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith("/#") && pathname !== "/") {
+      e.preventDefault();
+      const hash = href.replace("/#", "#");
+      router.push(`/${hash}`);
+
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const headerHeight = 88;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
+
+          window.scrollTo({
+            top: elementPosition - headerHeight,
+            behavior: "smooth",
+          });
+        }
+      }, 300);
+    }
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#002329]">
       <Container>
-        <nav className="flex items-center justify-between h-17.25">
+        <nav className="flex items-center justify-between h-[88px]">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 z-50 h-7.75"
+            className="flex items-center gap-2 group"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <Logo width={22} height={22} />
-            <span className="text-white font-semibold text-xl">Upreach</span>
+            <Logo
+              width={24}
+              height={24}
+              className="text-white/80 group-hover:text-white transition-colors duration-300"
+            />
+            <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-medium tracking-[-0.01em]">
+              Upreach
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
-                  href={item.href}
-                  className="text-neutral-200 hover:text-white transition-colors duration-200 text-sm font-medium"
+                  href={getHref(item)}
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-[16px] font-[500] tracking-[0.01em]"
+                  onClick={(e) => {
+                    const href = getHref(item);
+                    if (href.startsWith("/#")) {
+                      handleAnchorClick(e, href);
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -64,14 +94,14 @@ export function Header() {
             ))}
           </ul>
 
-          {/* Desktop CTA Button */}
+          {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button>Contact us</Button>
+            <Button variant="primary" href="/contact-page">Contact us</Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
-            className="lg:hidden z-50 p-2 text-white"
+            className="lg:hidden p-2 text-white/80 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
@@ -95,28 +125,34 @@ export function Header() {
 
           {/* Mobile Menu */}
           <div
-            className={`lg:hidden fixed inset-0 bg-dark transition-all duration-300 ${
+            className={`lg:hidden fixed inset-0 bg-[#002329] transition-all duration-300 ${
               isMobileMenuOpen
                 ? "opacity-100 visible"
                 : "opacity-0 invisible pointer-events-none"
             }`}
-            style={{ top: "0" }}
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
-              <ul className="flex flex-col items-center gap-6 w-full">
+            <div className="flex flex-col items-center justify-center h-full gap-10 px-6">
+              <ul className="flex flex-col items-center gap-8 w-full">
                 {navItems.map((item) => (
                   <li key={item.href} className="w-full text-center">
                     <Link
-                      href={item.href}
-                      className="block text-neutral-200 hover:text-white transition-colors duration-200 text-lg font-medium py-3"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      href={getHref(item)}
+                      className="block text-white/70 hover:text-white transition-colors duration-300 text-lg font-medium py-3"
+                      onClick={(e) => {
+                        setIsMobileMenuOpen(false);
+                        const href = getHref(item);
+                        if (href.startsWith("/#")) {
+                          handleAnchorClick(e, href);
+                        }
+                      }}
                     >
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Button>Contact us</Button>
+
+              <Button variant="primary" href="/contact-page">Contact us</Button>
             </div>
           </div>
         </nav>

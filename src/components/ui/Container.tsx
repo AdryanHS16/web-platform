@@ -1,7 +1,14 @@
-export function Container({ children }: { children: React.ReactNode }) {
+interface ContainerProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function Container({ children, className = "" }: ContainerProps) {
   return (
-    <div className="mx-auto max-w-6xl px-6">
+    <div
+      className={`max-w-7xl mx-auto px-6 lg:px-12 ${className}`}
+    >
       {children}
     </div>
-  )
+  );
 }
