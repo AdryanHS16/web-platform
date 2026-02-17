@@ -30,5 +30,7 @@ html {
 }
 
 body {
+  font-family: var(--font-satoshi);
   line-height: 1.6;
+  font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11";
 }

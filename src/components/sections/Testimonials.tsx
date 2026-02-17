@@ -21,7 +21,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 md:py-28 border-t border-neutral-800">
+    <section id="testimonials" className="py-20 md:py-28 border-t border-neutral-800">
       <Container>
         <Heading as="h2" className="max-w-2xl">
           What people are saying

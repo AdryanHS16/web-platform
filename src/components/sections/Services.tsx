@@ -18,7 +18,7 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-20 md:py-28 border-t border-neutral-800">
+    <section id="services" className="py-20 md:py-28 border-t border-neutral-800">
       <Container>
         <Heading as="h2" className="max-w-2xl">
           What we focus on

@@ -7,12 +7,7 @@ const config: Config = {
         './src/components/**/*.{ts,tsx}',
     ],
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
-                heading: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
-            },
-        },
+        extend: {},
     },
     plugins: [],
 }
