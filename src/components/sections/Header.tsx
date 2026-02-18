@@ -55,9 +55,9 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#002329]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-dark">
       <Container>
-        <nav className="flex items-center justify-between h-[88px]">
+        <nav className="flex items-center justify-between h-22">
           {/* Logo */}
           <Link
             href="/"
@@ -69,7 +69,7 @@ export function Header() {
               height={24}
               className="text-white/80 group-hover:text-white transition-colors duration-300"
             />
-            <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-medium tracking-[-0.01em]">
+            <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-bold tracking-[-0.01em]">
               Upreach
             </span>
           </Link>
@@ -80,7 +80,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={getHref(item)}
-                  className="text-white/70 hover:text-white transition-colors duration-300 text-[16px] font-[500] tracking-[0.01em]"
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-[16px] font-medium tracking-[0.01em]"
                   onClick={(e) => {
                     const href = getHref(item);
                     if (href.startsWith("/#")) {
@@ -125,7 +125,7 @@ export function Header() {
 
           {/* Mobile Menu */}
           <div
-            className={`lg:hidden fixed inset-0 bg-[#002329] transition-all duration-300 ${
+            className={`lg:hidden fixed inset-0 bg-dark transition-all duration-300 ${
               isMobileMenuOpen
                 ? "opacity-100 visible"
                 : "opacity-0 invisible pointer-events-none"

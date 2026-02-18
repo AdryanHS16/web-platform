@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      "px-6 py-2.5 bg-[#4ADE80] hover:bg-[#3CC973] text-[#002329] text-sm font-semibold hover:shadow-md",
+      "px-6 py-2.5 bg-[rgb(80,200,120)] hover:bg-[rgb(92,242,142)] text-[#002329] font-medium text-[18px]",
     secondary:
       "bg-gray-600 text-white hover:bg-gray-700 px-6 py-3 text-base",
     "secondary-small":
