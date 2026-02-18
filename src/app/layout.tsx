@@ -4,8 +4,8 @@ import { Header } from "@/components/sections/Header";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${satoshi.variable}`}>
-      <body className="text-black antialiased">
+    <html lang="pt-BR">
+      <body className={`${satoshi.className} text-black antialiased`}>
         <Header />
         {children}
       </body>
