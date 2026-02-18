@@ -1,6 +1,6 @@
 interface ContainerProps {
-  children: React.ReactNode;
-  className?: string;
+  children: React.ReactNode
+  className?: string
 }
 
 export function Container({ children, className = "" }: ContainerProps) {
@@ -10,5 +10,5 @@ export function Container({ children, className = "" }: ContainerProps) {
     >
       {children}
     </div>
-  );
+  )
 }

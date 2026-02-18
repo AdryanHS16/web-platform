@@ -65,11 +65,11 @@ export function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <Logo
-              width={24}
-              height={24}
+              width={22}
+              height={22}
               className="text-white/80 group-hover:text-white transition-colors duration-300"
             />
-            <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-bold tracking-[-0.01em]">
+            <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-bold leading-[1.4] tracking-[-0.01em]">
               Upreach
             </span>
           </Link>
