@@ -1,41 +1,58 @@
-import { Container } from '@/components/ui/Container'
-import { Button } from '@/components/ui/Button'
-import { HeroImage } from '@/components/sections/HeroImage'
+import Image from "next/image";
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
+import { HeroImage } from "@/components/sections/HeroImage";
+import { GridBackground } from "@/components/sections/GridBackground";
 
 export function Hero() {
   return (
     <section className="relative bg-dark text-white overflow-hidden">
-      
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[40px_40px]" />
+      <GridBackground />
 
-      <Container className="relative pt-40 pb-28 md:pt-48 md:pb-36">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left */}
-          <div>
-            <h1 className="text-4xl md:text-6xl font-medium leading-tight tracking-tight max-w-xl">
+      <Container className="relative pt-28 pb-24 md:pt-36 md:pb-28">
+        <div className="relative flex items-center justify-between gap-12">
+
+          {/* content left */}
+          <div className="max-w-[620px]">
+
+            <h1 className="text-[44px] md:text-[64px] font-semibold leading-[1.05] tracking-[-0.02em]">
               Grow your business,
               <br />
               master every move.
             </h1>
 
-            <p className="mt-6 text-neutral-300 max-w-lg leading-relaxed">
+            <p className="mt-6 text-white/70 max-w-[520px] text-[18px] leading-[28px]">
               Helping businesses thrive with innovative digital strategies,
               creative solutions, and measurable outcomes.
             </p>
 
-            <div className="mt-10 flex gap-4">
+            <div className="mt-8 flex items-center gap-4">
               <Button variant="primary">Book a call</Button>
               <Button variant="secondary">Learn more</Button>
             </div>
+
+            {/* Logos row */}
+            <div className="mt-12 flex items-center gap-10 opacity-40">
+              <span className="text-[18px] font-semibold tracking-[-0.01em]">
+                logoipsum
+              </span>
+              <span className="text-[18px] font-semibold tracking-[-0.01em]">
+                logoipsum
+              </span>
+              <span className="text-[18px] font-semibold tracking-[-0.01em]">
+                logoipsum
+              </span>
+            </div>
+
           </div>
 
-          {/* Right */}
-          <HeroImage />
+          {/* Image Right */}
+          <div className="shrink-0">
+            <HeroImage />
+          </div>
 
         </div>
       </Container>
     </section>
-  )
+  );
 }
