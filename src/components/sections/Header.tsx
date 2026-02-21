@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Container, Logo, Button } from "@/components/ui";
+import { Container, Button } from "@/components/ui";
+import { Logo } from "../icons";
 
 const navItems = [
   { label: "Services", href: "#services", isAnchor: true },
