@@ -3,8 +3,8 @@ import { HeroIconCircle, HeroIconCard1, HeroIconCard2, HeroIconTrendingUp } from
 
 export function HeroImage() {
   return (
-    <div className="relative w-[404px] h-[512px]">
-      <div className="relative w-full h-full rounded-[24px] overflow-hidden">
+    <div className="relative w-101 h-128">
+      <div className="relative w-full h-full rounded-3xl overflow-hidden">
         <Image
           src="/img/hero-image.jpg"
           alt="Business professional"
@@ -17,7 +17,7 @@ export function HeroImage() {
       <div
         className="
           absolute -top-6 -right-6
-          w-[55px] h-[55px]
+          w-13.75 h-13.75
           rounded-[100px]
           bg-[rgba(255,255,255,0.12)]
           backdrop-blur-lg
@@ -35,7 +35,7 @@ export function HeroImage() {
       {/* Floating card 1 */}
       <div
         className="
-          absolute bottom-[160px] -left-[60px]
+          absolute bottom-40 -left-15
           w-[205.906px] h-[57.5938px]
           flex flex-row items-center justify-start
           gap-3
@@ -66,12 +66,12 @@ export function HeroImage() {
       {/* Floating card 2 */}
       <div
         className="
-          absolute bottom-[40px] -left-[60px]
-          w-[267px] h-[93.1875px]
+          absolute bottom-10 -left-15
+          w-66.75 h-[93.1875px]
           flex flex-row items-center
           gap-3
           p-4
-          rounded-[16px]
+          rounded-2xl
           bg-[rgba(255,255,255,0.12)]
           backdrop-blur-lg
           border border-[rgba(255,255,255,0.10)]
@@ -82,7 +82,7 @@ export function HeroImage() {
         {/* Left icon circle */}
         <div
           className="
-            w-[44px] h-[44px]
+            w-11 h-11
             rounded-full
             flex items-center justify-center
             border border-[rgba(255,255,255,0.18)]
