@@ -57,8 +57,8 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark">
-      <Container>
-        <nav className="flex items-center justify-between h-22">
+      <div className="flex mx-auto max-w-300">
+        <nav className="flex items-center justify-between h-16 w-full">
           {/* Logo */}
           <Link
             href="/"
@@ -157,7 +157,7 @@ export function Header() {
             </div>
           </div>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }
