@@ -51,8 +51,8 @@ export function Hero() {
 
             {/* Logos row */}
             <div className="mt-24 relative w-full max-w-5xl overflow-hidden flex items-center h-20">
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-dark to-transparent z-10" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-dark to-transparent z-10" />
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-linear-to-r from-dark to-transparent z-10" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-linear-to-l from-dark to-transparent z-10" />
 
               {/* Container animado */}
               <motion.div
@@ -70,7 +70,7 @@ export function Hero() {
                   return (
                     <div
                       key={index}
-                      className="flex-shrink-0 flex items-center justify-center gap-4 group cursor-pointer"
+                      className="shrink-0 flex items-center justify-center gap-4 group cursor-pointer"
                     >
                       <Logo
                         width={32}
