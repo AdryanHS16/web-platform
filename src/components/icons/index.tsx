@@ -14,3 +14,6 @@ export * from "./ServiceIconLead";
 export * from "./ServiceIconBrand";
 export * from "./ServiceIconContent";
 export * from "./ServiceIconStrategy";
+export * from "./WhyUsIconChart";
+export * from "./WhyUsIconPlay";
+export * from "./WhyUsIconSparkle";
