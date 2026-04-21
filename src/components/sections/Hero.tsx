@@ -54,7 +54,7 @@ export function Hero() {
               <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-linear-to-r from-dark to-transparent z-10" />
               <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-linear-to-l from-dark to-transparent z-10" />
 
-              {/* Container animado */}
+              {/* Container animated */}
               <motion.div
                 className="flex items-center gap-18 w-max pl-12"
                 animate={{ x: ["0%", "-50%"] }}
@@ -70,14 +70,14 @@ export function Hero() {
                   return (
                     <div
                       key={index}
-                      className="shrink-0 flex items-center justify-center gap-4 group cursor-pointer"
+                      className="shrink-0 flex items-center justify-center gap-2 group cursor-pointer"
                     >
                       <Logo
                         width={32}
                         height={32}
-                        className="text-white opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                        className="text-white opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                       />
-                      <span className="text-white opacity-40 group-hover:opacity-100 transition-opacity duration-300 font-medium text-lg tracking-wide whitespace-nowrap">
+                      <span className="text-white opacity-50 group-hover:opacity-100 transition-opacity duration-300 font-medium text-lg tracking-wide whitespace-nowrap">
                         {name}
                       </span>
                     </div>
