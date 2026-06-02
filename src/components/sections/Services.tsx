@@ -92,7 +92,7 @@ export function Services() {
             return (
               <div
                 key={service.title}
-                className="group relative rounded-3xl bg-[#f3f3f3] p-8 md:p-10 flex flex-col gap-6 cursor-pointer transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1"
+                className="group relative rounded-3xl bg-[#e8e8e8] p-8 md:p-10 flex flex-col gap-6 cursor-pointer transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1"
               >
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#111111] shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:text-[#3E8655] group-hover:bg-green-50">
                   <Icon width={20} height={20} />

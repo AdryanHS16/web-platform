@@ -19,7 +19,7 @@ export function Header() {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const getHref = (item: typeof navItems[0]) => {
+  const getHref = (item: (typeof navItems)[0]) => {
     if (item.isAnchor && pathname !== "/") {
       return `/${item.href}`;
     }
@@ -32,7 +32,7 @@ export function Header() {
 
   const handleAnchorClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     if (href.startsWith("/#") && pathname !== "/") {
       e.preventDefault();
@@ -97,7 +97,9 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="primary" href="/contact-page">Contact us</Button>
+            <Button variant="primary" href="/contact-page">
+              Contact us
+            </Button>
           </div>
 
           {/* Mobile Toggle */}
@@ -153,7 +155,9 @@ export function Header() {
                 ))}
               </ul>
 
-              <Button variant="primary" href="/contact-page">Contact us</Button>
+              <Button variant="primary" href="/contact-page">
+                Contact us
+              </Button>
             </div>
           </div>
         </nav>
