@@ -17,3 +17,5 @@ export * from "./ServiceIconStrategy";
 export * from "./WhyUsIconChart";
 export * from "./WhyUsIconPlay";
 export * from "./WhyUsIconSparkle";
+export * from "./CompareIconCheck";
+export * from "./CompareIconClose";
