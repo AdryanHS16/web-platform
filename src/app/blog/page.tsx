@@ -68,7 +68,7 @@ function BlogCard({ post }: { post: BlogPost }) {
   return (
     <article className="group flex w-full flex-col gap-5">
       <Link href={`/blog/${post.id}`} className="block">
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-white/5 border border-white/10">
+        <div className="relative aspect-16/10 overflow-hidden rounded-[20px] bg-white/5 border border-white/10">
           <Image
             src={post.image}
             alt={post.title}
