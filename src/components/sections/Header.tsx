@@ -1,96 +1,47 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Container, Button } from "@/components/ui";
-import { Logo } from "../icons";
+import { BrandLink } from "@/components/ui/BrandLink";
+import { AnchorLink } from "@/components/ui/AnchorLink";
 
 const navItems = [
-  { label: "Services", href: "#services", isAnchor: true },
-  { label: "Work", href: "#work", isAnchor: true },
-  { label: "Testimonials", href: "#testimonials", isAnchor: true },
-  { label: "About", href: "/about", isAnchor: false },
-  { label: "Blog", href: "/blog", isAnchor: false },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export function Header() {
-  const pathname = usePathname();
-  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const getHref = (item: (typeof navItems)[0]) => {
-    if (item.isAnchor && pathname !== "/") {
-      return `/${item.href}`;
-    }
-    return item.href;
-  };
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
   }, [isMobileMenuOpen]);
-
-  const handleAnchorClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    if (href.startsWith("/#") && pathname !== "/") {
-      e.preventDefault();
-      const hash = href.replace("/#", "#");
-      router.push(`/${hash}`);
-
-      setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          const headerHeight = 88;
-          const elementPosition =
-            element.getBoundingClientRect().top + window.pageYOffset;
-
-          window.scrollTo({
-            top: elementPosition - headerHeight,
-            behavior: "smooth",
-          });
-        }
-      }, 300);
-    }
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark">
       <div className="flex mx-auto max-w-300">
         <nav className="flex items-center justify-between h-16 w-full">
           {/* Logo */}
-          <Link
-            href="/"
+          <BrandLink
             className="flex items-center gap-2 group"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Logo
-              width={22}
-              height={22}
-              className="text-white/80 group-hover:text-white transition-colors duration-300"
-            />
-            <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-bold leading-[1.4] tracking-[-0.01em]">
-              Upreach
-            </span>
-          </Link>
+            logoClassName="text-white/80 group-hover:text-white transition-colors duration-300"
+            textClassName="text-white/80 group-hover:text-white transition-colors duration-300 text-[22px] font-bold leading-[1.4] tracking-[-0.01em]"
+            onNavigate={() => setIsMobileMenuOpen(false)}
+          />
 
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={getHref(item)}
+                <AnchorLink
+                  href={item.href}
                   className="text-white/70 hover:text-white transition-colors duration-300 text-[16px] font-medium tracking-[0.01em]"
-                  onClick={(e) => {
-                    const href = getHref(item);
-                    if (href.startsWith("/#")) {
-                      handleAnchorClick(e, href);
-                    }
-                  }}
                 >
                   {item.label}
-                </Link>
+                </AnchorLink>
               </li>
             ))}
           </ul>
@@ -138,19 +89,13 @@ export function Header() {
               <ul className="flex flex-col items-center gap-8 w-full">
                 {navItems.map((item) => (
                   <li key={item.href} className="w-full text-center">
-                    <Link
-                      href={getHref(item)}
+                    <AnchorLink
+                      href={item.href}
                       className="block text-white/70 hover:text-white transition-colors duration-300 text-lg font-medium py-3"
-                      onClick={(e) => {
-                        setIsMobileMenuOpen(false);
-                        const href = getHref(item);
-                        if (href.startsWith("/#")) {
-                          handleAnchorClick(e, href);
-                        }
-                      }}
+                      onNavigate={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}
-                    </Link>
+                    </AnchorLink>
                   </li>
                 ))}
               </ul>
