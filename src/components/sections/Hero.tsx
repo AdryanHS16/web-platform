@@ -24,7 +24,7 @@ const clientBrands = [
 
 export function Hero() {
   return (
-    <section className="relative bg-dark text-white overflow-hidden pt-22">
+    <section id="hero" className="relative bg-dark text-white overflow-hidden pt-22">
       {" "}
       <GridBackground />
       <Container className="relative md:pt-10 md:pb-28">

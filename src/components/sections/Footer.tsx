@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Logo } from "@/components/icons";
+import { BrandLink } from "@/components/ui/BrandLink";
+import { AnchorLink } from "@/components/ui/AnchorLink";
 
 const sections = [
   { label: "Services", href: "/#services" },
@@ -15,12 +15,11 @@ export function Footer() {
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           {/* Brand + newsletter */}
           <div className="max-w-[420px]">
-            <Link href="/" className="flex items-center gap-2 group w-fit">
-              <Logo width={22} height={22} className="text-primary-1" />
-              <span className="text-[22px] font-bold leading-[1.4] tracking-[-0.01em] text-white">
-                Upreach
-              </span>
-            </Link>
+            <BrandLink
+              className="flex items-center gap-2 group w-fit"
+              logoClassName="text-primary-1"
+              textClassName="text-[22px] font-bold leading-[1.4] tracking-[-0.01em] text-white"
+            />
 
             <h3 className="mt-8 text-[18px] font-semibold text-white">
               Stay Connected &amp; Informed
@@ -53,12 +52,12 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               {sections.map((item) => (
                 <li key={item.label}>
-                  <Link
+                  <AnchorLink
                     href={item.href}
                     className="text-[15px] text-white/60 hover:text-white transition-colors duration-300"
                   >
                     {item.label}
-                  </Link>
+                  </AnchorLink>
                 </li>
               ))}
             </ul>
