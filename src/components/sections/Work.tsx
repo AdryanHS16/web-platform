@@ -1,9 +1,14 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
+
+const SET_WIDTH = 1504;
+const BASE_SPEED = SET_WIDTH / 20;
+const HOVER_SPEED_FACTOR = 0.4;
 
 const works = [
   {
@@ -38,6 +43,21 @@ const works = [
 export function Work() {
   const duplicatedWorks = [...works, ...works];
 
+  const x = useMotionValue(0);
+  const isHovering = useRef(false);
+  const speed = useRef(BASE_SPEED);
+
+  useAnimationFrame((_, delta) => {
+    const target = isHovering.current
+      ? BASE_SPEED * HOVER_SPEED_FACTOR
+      : BASE_SPEED;
+    speed.current += (target - speed.current) * Math.min(1, delta / 200);
+
+    let next = x.get() - speed.current * (delta / 1000);
+    if (next <= -SET_WIDTH) next += SET_WIDTH;
+    x.set(next);
+  });
+
   return (
     <section id="work" className="py-20 bg-white select-none">
       <Container className="mb-14">
@@ -58,18 +78,19 @@ export function Work() {
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-white via-white/20 to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-white via-white/20 to-transparent z-10" />
 
-        <motion.div
-          className="flex gap-8"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 25,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
+        <motion.div className="flex gap-8" style={{ x }}>
           {duplicatedWorks.map((work, index) => (
-            <div key={index} className="flex flex-col gap-5 shrink-0">
-              <div className="relative w-[344px] h-[325px] overflow-hidden rounded-[32px] bg-[#f7f7f7] border border-black/5">
+            <div
+              key={index}
+              onMouseEnter={() => {
+                isHovering.current = true;
+              }}
+              onMouseLeave={() => {
+                isHovering.current = false;
+              }}
+              className="flex flex-col gap-5 shrink-0"
+            >
+              <div className="relative w-[344px] h-[325px] cursor-pointer overflow-hidden rounded-[32px] bg-[#f7f7f7] border border-black/5">
                 <Image
                   src={work.src}
                   alt={work.title}

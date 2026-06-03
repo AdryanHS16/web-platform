@@ -95,7 +95,7 @@ export function Team() {
 
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/0 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
                 <h4 className="text-[18px] font-semibold tracking-tight text-white">
                   {member.name}
                 </h4>
