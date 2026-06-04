@@ -7,6 +7,7 @@ import { Comparison } from "@/components/sections/Comparison";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Team } from "@/components/sections/Team";
 import { FAQ } from "@/components/sections/FAQ";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Testimonials />
       <Team />
       <FAQ />
+      <CTASection className="bg-white pb-20 md:pb-24" />
       <Footer />
     </>
   );
