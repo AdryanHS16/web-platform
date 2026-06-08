@@ -1,28 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import Swal from "sweetalert2";
+import { useRef, useState, type FormEvent } from "react";
+import { brandSwal } from "@/lib/swal";
 
 const GMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
-const brandSwal = Swal.mixin({
-  buttonsStyling: false,
-  heightAuto: false,
-  scrollbarPadding: false,
-  background: "#ffffff",
-  color: "#002329",
-  customClass: {
-    popup: "rounded-3xl border border-black/5 shadow-2xl",
-    title: "!text-dark !font-semibold",
-    htmlContainer: "!text-dark/60",
-    icon: "swal-icon-animated",
-    confirmButton:
-      "h-11 rounded-full bg-primary-2 px-7 text-[15px] font-medium text-dark hover:bg-primary-1 transition-colors cursor-pointer focus:outline-none",
-  },
-});
-
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
+  const emailRef = useRef<HTMLInputElement>(null);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,23 +15,27 @@ export function NewsletterForm() {
     const value = email.trim();
 
     if (!GMAIL_REGEX.test(value)) {
-      brandSwal.fire({
-        icon: "error",
-        iconColor: "#ef4444",
-        title: "E-mail inválido",
-        text: "Por Favor, informe um endereço de email válido",
-        confirmButtonText: "Entendi",
-      });
+      brandSwal
+        .fire({
+          icon: "error",
+          iconColor: "#ef4444",
+          title: "E-mail inválido",
+          text: "Por Favor, informe um endereço de email válido",
+          confirmButtonText: "Entendi",
+        })
+        .then(() => emailRef.current?.focus());
       return;
     }
 
-    brandSwal.fire({
-      icon: "success",
-      iconColor: "#5cf28e",
-      title: "Inscrição confirmada!",
-      text: "Agora você faz parte da newsletter da Upreach.",
-      confirmButtonText: "Vamos lá",
-    });
+    brandSwal
+      .fire({
+        icon: "success",
+        iconColor: "#5cf28e",
+        title: "Inscrição confirmada!",
+        text: "Agora você faz parte da newsletter da Upreach.",
+        confirmButtonText: "Vamos lá",
+      })
+      .then(() => emailRef.current?.focus());
 
     setEmail("");
   }
@@ -54,6 +43,7 @@ export function NewsletterForm() {
   return (
     <form onSubmit={handleSubmit} className="mt-6 flex items-center gap-3" noValidate>
       <input
+        ref={emailRef}
         type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
