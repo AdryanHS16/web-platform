@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { BrandLink } from "@/components/ui/BrandLink";
 import { AnchorLink } from "@/components/ui/AnchorLink";
+import { NewsletterForm } from "@/components/sections/NewsletterForm";
 
 const sections = [
   { label: "Services", href: "/#services" },
@@ -29,19 +30,7 @@ export function Footer() {
               growth strategies to scale your business.
             </p>
 
-            <form className="mt-6 flex items-center gap-3">
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="h-11 w-full max-w-[240px] rounded-full border border-white/10 bg-white/5 px-5 text-[15px] text-white placeholder:text-white/40 focus:outline-none focus:border-primary-2/60 transition-colors"
-              />
-              <button
-                type="submit"
-                className="h-11 shrink-0 rounded-full bg-primary-2 px-6 text-[15px] font-medium text-dark hover:bg-primary-1 transition-colors cursor-pointer"
-              >
-                Get Notified
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
 
           {/* Link column */}
