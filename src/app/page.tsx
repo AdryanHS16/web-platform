@@ -20,7 +20,7 @@ export default function Home() {
       <Testimonials />
       <Team />
       <FAQ />
-      <CTASection className="bg-white pb-20 md:pb-24" />
+      <CTASection />
       <Footer />
     </>
   );

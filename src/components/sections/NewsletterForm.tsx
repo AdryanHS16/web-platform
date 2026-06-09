@@ -19,9 +19,9 @@ export function NewsletterForm() {
         .fire({
           icon: "error",
           iconColor: "#ef4444",
-          title: "E-mail inválido",
-          text: "Por Favor, informe um endereço de email válido",
-          confirmButtonText: "Entendi",
+          title: "Invalid email",
+          text: "Please enter a valid email address",
+          confirmButtonText: "Got it",
         })
         .then(() => emailRef.current?.focus());
       return;
@@ -31,9 +31,9 @@ export function NewsletterForm() {
       .fire({
         icon: "success",
         iconColor: "#5cf28e",
-        title: "Inscrição confirmada!",
-        text: "Agora você faz parte da newsletter da Upreach.",
-        confirmButtonText: "Vamos lá",
+        title: "Subscription confirmed!",
+        text: "You are now part of the Upreach newsletter.",
+        confirmButtonText: "Let's go",
       })
       .then(() => emailRef.current?.focus());
 
