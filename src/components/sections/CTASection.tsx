@@ -1,15 +1,9 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
-interface CTASectionProps {
-  className?: string;
-}
-
-export function CTASection({
-  className = "bg-dark pb-20 md:pb-28",
-}: CTASectionProps) {
+export function CTASection() {
   return (
-    <section className={className}>
+    <section className="bg-white pb-20 md:pb-24">
       <Container>
         <div className="relative mx-auto max-w-[1040px] overflow-hidden rounded-[32px] border border-white/10 bg-dark px-6 py-16 md:px-16 md:py-20 text-center">
           <div
@@ -24,8 +18,7 @@ export function CTASection({
 
           <div className="relative z-10">
             <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em] text-white">
-              Ready to elevate your brand{" "}
-              <br className="hidden sm:block" />
+              Ready to elevate your brand <br className="hidden sm:block" />
               and unlock new growth?
             </h2>
 

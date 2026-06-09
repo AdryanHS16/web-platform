@@ -33,9 +33,9 @@ export function ContactForm() {
         .fire({
           icon: "error",
           iconColor: "#ef4444",
-          title: "Informe seu nome",
-          text: "Por Favor, preencha o campo de nome",
-          confirmButtonText: "Entendi",
+          title: "Enter your name",
+          text: "Please fill in the name field",
+          confirmButtonText: "Got it",
         })
         .then(() => nameRef.current?.focus());
       return;
@@ -46,9 +46,9 @@ export function ContactForm() {
         .fire({
           icon: "error",
           iconColor: "#ef4444",
-          title: "E-mail inválido",
-          text: "Por Favor, informe um endereço de email válido",
-          confirmButtonText: "Entendi",
+          title: "Invalid email",
+          text: "Please enter a valid email address",
+          confirmButtonText: "Got it",
         })
         .then(() => emailRef.current?.focus());
       return;
@@ -59,9 +59,9 @@ export function ContactForm() {
         .fire({
           icon: "error",
           iconColor: "#ef4444",
-          title: "Mensagem vazia",
-          text: "Por Favor, escreva uma mensagem antes de enviar",
-          confirmButtonText: "Entendi",
+          title: "Empty message",
+          text: "Please write a message before sending",
+          confirmButtonText: "Got it",
         })
         .then(() => messageRef.current?.focus());
       return;
@@ -71,9 +71,9 @@ export function ContactForm() {
       .fire({
         icon: "success",
         iconColor: "#5cf28e",
-        title: "Mensagem enviada!",
-        text: "Obrigado pelo contato. A equipe da Upreach retornará em breve.",
-        confirmButtonText: "Fechar",
+        title: "Message sent!",
+        text: "Thanks for reaching out. The Upreach team will get back to you soon.",
+        confirmButtonText: "Close",
       })
       .then(() => nameRef.current?.focus());
 
