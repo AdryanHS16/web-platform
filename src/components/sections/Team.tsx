@@ -33,7 +33,12 @@ const team = [
   },
 ];
 
-export function Team() {
+interface TeamProps {
+  fullHeight?: boolean;
+  embedded?: boolean;
+}
+
+export function Team({ fullHeight = false, embedded = false }: TeamProps) {
   const duplicatedTeam = [...team, ...team];
 
   const x = useMotionValue(0);
@@ -51,9 +56,13 @@ export function Team() {
     x.set(next);
   });
 
-  return (
-    <section id="team" className="py-20 bg-white select-none">
-      <Container className="mb-14">
+  const content = (
+    <>
+      <Container
+        className={
+          embedded ? "mb-8 pt-12 md:mb-10 md:pt-14" : fullHeight ? "mb-10" : "mb-14"
+        }
+      >
         <div className="flex flex-col items-center text-center">
           <Heading
             as="h3"
@@ -107,6 +116,27 @@ export function Team() {
           ))}
         </motion.div>
       </div>
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <div id="team" className="w-full shrink-0 select-none">
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <section
+      id="team"
+      className={`select-none bg-white ${
+        fullHeight
+          ? "flex min-h-dvh snap-start snap-always flex-col justify-center py-12 md:py-16"
+          : "py-20"
+      }`}
+    >
+      {content}
     </section>
   );
 }

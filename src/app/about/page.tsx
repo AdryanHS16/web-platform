@@ -1,7 +1,6 @@
 import { AboutHero } from "@/components/sections/AboutHero";
+import { AboutClosing } from "@/components/sections/AboutClosing";
 import { WhyUs } from "@/components/sections/WhyUs";
-import { Team } from "@/components/sections/Team";
-import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/sections/Footer";
 
 export const metadata = {
@@ -12,11 +11,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="snap-y snap-mandatory">
       <AboutHero />
-      <WhyUs />
-      <Team />
-      <CTASection />
+      <WhyUs fullHeight />
+      <AboutClosing />
       <Footer />
     </main>
   );

@@ -14,8 +14,7 @@ export function AboutHero() {
       <Container className="relative z-10 px-6">
         <div className="mx-auto max-w-[680px] text-center">
           <h1 className="text-[34px] md:text-[52px] font-semibold leading-[1.05] tracking-[-0.02em]">
-            Innovation meets{" "}
-            <br className="hidden sm:block" />
+            Innovation meets <br className="hidden sm:block" />
             strategy, <span className="text-primary-1">fueling growth.</span>
           </h1>
 

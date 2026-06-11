@@ -1,5 +1,10 @@
-import Image from 'next/image'
-import { HeroIconCircle, HeroIconCard1, HeroIconCard2, HeroIconTrendingUp } from "@/components/icons"
+import Image from "next/image";
+import {
+  HeroIconCircle,
+  HeroIconCard1,
+  HeroIconCard2,
+  HeroIconTrendingUp,
+} from "@/components/icons";
 
 export function HeroImage() {
   return (
@@ -9,6 +14,7 @@ export function HeroImage() {
           src="/img/hero-image.jpg"
           alt="Business professional"
           fill
+          sizes="(max-width: 768px) 100vw, 600px"
           className="object-cover object-center"
         />
       </div>
@@ -25,11 +31,7 @@ export function HeroImage() {
           flex items-center justify-center
         "
       >
-        <HeroIconCircle
-          width={34}
-          height={34}
-          className="text-[#5CF28E]"
-        />
+        <HeroIconCircle width={34} height={34} className="text-[#5CF28E]" />
       </div>
 
       {/* Floating card 1 */}
@@ -100,14 +102,18 @@ export function HeroImage() {
           </p>
 
           <div className="flex items-center gap-2">
-            <HeroIconTrendingUp width={16} height={16} className="text-[#5CF28E]" />
+            <HeroIconTrendingUp
+              width={16}
+              height={16}
+              className="text-[#5CF28E]"
+            />
             <p className="text-[16px] text-white leading-none whitespace-nowrap">
               <span className="font-semibold">+65%</span>{" "}
               <span className="font-normal">ROI Boost</span>
-            </p>            
+            </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
