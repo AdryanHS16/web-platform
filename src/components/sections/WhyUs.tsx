@@ -13,13 +13,27 @@ const stats = [
   { value: "$250K+", label: "Revenue Generated" },
 ];
 
-export function WhyUs() {
+interface WhyUsProps {
+  fullHeight?: boolean;
+}
+
+export function WhyUs({ fullHeight = false }: WhyUsProps) {
   return (
-    <section className="relative bg-dark text-white py-18 md:py-20 overflow-hidden">
+    <section
+      className={`relative overflow-hidden bg-dark text-white ${
+        fullHeight
+          ? "flex min-h-dvh snap-start snap-always flex-col justify-center py-12 md:py-16"
+          : "py-18 md:py-20"
+      }`}
+    >
       <GridBackground />
 
       <Container className="relative z-10">
-        <div className="max-w-[700px] mx-auto text-center mb-18 px-4">
+        <div
+          className={`mx-auto max-w-[700px] px-4 text-center ${
+            fullHeight ? "mb-10 md:mb-12" : "mb-18"
+          }`}
+        >
           <h2 className="text-[48px] md:text-[46px] font-semibold leading-[1.05] tracking-[-0.02em] text-white mb-6">
             Why we're the right choice
           </h2>
@@ -30,7 +44,11 @@ export function WhyUs() {
         </div>
 
         <div className="relative max-w-[1200px] flex justify-center">
-          <div className="rounded-[32px] p-2 bg-[#FFFFFF0A] border border-white/10 relative w-full max-w-[820px] h-[300px] md:h-[412px]">
+          <div
+            className={`relative w-full max-w-[820px] rounded-[32px] border border-white/10 bg-[#FFFFFF0A] p-2 ${
+              fullHeight ? "h-[240px] md:h-[320px]" : "h-[300px] md:h-[412px]"
+            }`}
+          >
             <div className="relative w-full h-full rounded-[24px] overflow-hidden">
               <Image
                 src="/img/whyus-image.avif"
@@ -84,7 +102,11 @@ export function WhyUs() {
           </div>
         </div>
 
-        <div className="mt-32 flex flex-col md:flex-row items-center justify-between max-w-[900px] mx-auto gap-12 md:gap-0 px-4">
+        <div
+          className={`flex flex-col items-center justify-between gap-12 px-4 md:flex-row md:gap-0 ${
+            fullHeight ? "mt-14 md:mt-16" : "mt-32"
+          } mx-auto max-w-[900px]`}
+        >
           {stats.map((stat, index) => (
             <div
               key={index}
