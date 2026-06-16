@@ -5,6 +5,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 interface CTASectionProps {
   fullHeight?: boolean;
   embedded?: boolean;
+  withTopSpacing?: boolean;
 }
 
 function CTACard({ large = false }: { large?: boolean }) {
@@ -50,6 +51,7 @@ function CTACard({ large = false }: { large?: boolean }) {
 export function CTASection({
   fullHeight = false,
   embedded = false,
+  withTopSpacing = false,
 }: CTASectionProps) {
   if (embedded) {
     return (
@@ -59,15 +61,19 @@ export function CTASection({
     );
   }
 
+  const sectionPadding = withTopSpacing
+    ? "py-20 md:py-24"
+    : "pb-20 md:pb-24";
+
   return (
     <section
       className={`bg-white ${
         fullHeight
           ? "flex min-h-dvh snap-start snap-always flex-col justify-end py-12 md:py-16"
-          : "pb-20 md:pb-24"
+          : sectionPadding
       }`}
     >
-      <Container>
+      <Container className="px-6 lg:px-12">
         <CTACard />
       </Container>
     </section>

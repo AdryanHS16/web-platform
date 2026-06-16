@@ -107,7 +107,7 @@ export default function BlogPage() {
         ))}
       </BlogGrid>
 
-      <CTASection />
+      <CTASection withTopSpacing />
       <Footer />
     </main>
   );
