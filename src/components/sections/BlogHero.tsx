@@ -3,7 +3,7 @@ import { GridBackground } from "@/components/sections/GridBackground";
 
 export function BlogHero() {
   return (
-    <section className="relative bg-dark text-white overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
+    <section className="relative bg-dark text-white overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
       <GridBackground />
 
       <Container className="relative z-10">
