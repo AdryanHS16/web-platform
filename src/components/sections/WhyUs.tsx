@@ -1,5 +1,10 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import {
+  ScrollReveal,
+  ScrollRevealGroup,
+  ScrollRevealItem,
+} from "@/components/ui/ScrollReveal";
 import { GridBackground } from "@/components/sections/GridBackground";
 import {
   WhyUsIconSparkle,
@@ -29,7 +34,7 @@ export function WhyUs({ fullHeight = false }: WhyUsProps) {
       <GridBackground />
 
       <Container className="relative z-10">
-        <div
+        <ScrollReveal
           className={`mx-auto max-w-[700px] px-4 text-center ${
             fullHeight ? "mb-10 md:mb-12" : "mb-18"
           }`}
@@ -41,9 +46,9 @@ export function WhyUs({ fullHeight = false }: WhyUsProps) {
             We create impactful strategies, refine brand positioning, and drive
             real results through smart content and scalable campaigns.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="relative max-w-[1200px] flex justify-center">
+        <ScrollReveal className="relative max-w-[1200px] flex justify-center" delay={0.1}>
           <div
             className={`relative w-full max-w-[820px] rounded-[32px] border border-white/10 bg-[#FFFFFF0A] p-2 ${
               fullHeight ? "h-[240px] md:h-[320px]" : "h-[300px] md:h-[412px]"
@@ -100,18 +105,17 @@ export function WhyUs({ fullHeight = false }: WhyUsProps) {
               </span>
             </button>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div
+        <ScrollRevealGroup
           className={`flex flex-col items-center justify-between gap-12 px-4 md:flex-row md:gap-0 ${
             fullHeight ? "mt-14 md:mt-16" : "mt-32"
           } mx-auto max-w-[900px]`}
+          stagger={0.12}
         >
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="w-[232px] h-[86px] flex flex-col justify-center items-center text-center"
-            >
+            <ScrollRevealItem key={index}>
+              <div className="w-[232px] h-[86px] flex flex-col justify-center items-center text-center">
               <span className="text-[36px] font-semibold tracking-[-0.02em] text-white leading-none mb-2">
                 {stat.value}
               </span>
@@ -119,8 +123,9 @@ export function WhyUs({ fullHeight = false }: WhyUsProps) {
                 {stat.label}
               </span>
             </div>
+            </ScrollRevealItem>
           ))}
-        </div>
+        </ScrollRevealGroup>
       </Container>
     </section>
   );

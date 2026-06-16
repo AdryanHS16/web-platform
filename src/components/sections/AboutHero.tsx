@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { GridBackground } from "@/components/sections/GridBackground";
 import { WhyUsIconPlay } from "@/components/icons";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function AboutHero() {
   return (
@@ -12,7 +13,7 @@ export function AboutHero() {
       <GridBackground />
 
       <Container className="relative z-10 px-6">
-        <div className="mx-auto max-w-[680px] text-center">
+        <ScrollReveal className="mx-auto max-w-[680px] text-center">
           <h1 className="text-[34px] md:text-[52px] font-semibold leading-[1.05] tracking-[-0.02em]">
             Innovation meets <br className="hidden sm:block" />
             strategy, <span className="text-primary-1">fueling growth.</span>
@@ -22,9 +23,9 @@ export function AboutHero() {
             Helping businesses thrive with innovative digital strategies,
             creative solutions, and measurable outcomes.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="relative mx-auto mt-8 md:mt-10 w-full max-w-[960px] rounded-[32px] border border-white/10 bg-white/4 p-2">
+        <ScrollReveal className="relative mx-auto mt-8 md:mt-10 w-full max-w-[960px] rounded-[32px] border border-white/10 bg-white/4 p-2" delay={0.15}>
           <div className="relative aspect-3/2 sm:aspect-7/3 w-full overflow-hidden rounded-[24px]">
             <Image
               src="/img/about-hero.png"
@@ -48,7 +49,7 @@ export function AboutHero() {
               Know our story
             </span>
           </button>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

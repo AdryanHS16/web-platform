@@ -4,6 +4,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
+import {
+  ScrollReveal,
+} from "@/components/ui/ScrollReveal";
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 
 const SET_WIDTH = 1216;
@@ -63,7 +66,7 @@ export function Team({ fullHeight = false, embedded = false }: TeamProps) {
           embedded ? "mb-8 pt-12 md:mb-10 md:pt-14" : fullHeight ? "mb-10" : "mb-14"
         }
       >
-        <div className="flex flex-col items-center text-center">
+        <ScrollReveal className="flex flex-col items-center text-center">
           <Heading
             as="h3"
             className="text-[48px] font-semibold tracking-tight text-[#0A0A0A]"
@@ -74,9 +77,10 @@ export function Team({ fullHeight = false, embedded = false }: TeamProps) {
             We are a team of strategists, designers, and innovators passionate
             about helping agencies grow.
           </p>
-        </div>
+        </ScrollReveal>
       </Container>
 
+      <ScrollReveal amount={0.1}>
       <div className="relative max-w-[1200px] mx-auto overflow-hidden px-4">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-white via-white/20 to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-white via-white/20 to-transparent z-10" />
@@ -116,6 +120,7 @@ export function Team({ fullHeight = false, embedded = false }: TeamProps) {
           ))}
         </motion.div>
       </div>
+      </ScrollReveal>
     </>
   );
 

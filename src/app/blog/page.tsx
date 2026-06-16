@@ -68,7 +68,7 @@ function BlogCard({ post }: { post: BlogPost }) {
   return (
     <article className="group flex w-full flex-col gap-5">
       <Link href={`/blog/${post.id}`} className="block">
-        <div className="relative aspect-16/10 overflow-hidden rounded-[20px] bg-white/5 border border-white/10">
+        <div className="relative aspect-16/10 overflow-hidden rounded-[20px] border border-black/5 bg-grey">
           <Image
             src={post.image}
             alt={post.title}
@@ -85,12 +85,12 @@ function BlogCard({ post }: { post: BlogPost }) {
 
       <div className="flex flex-col gap-2 px-1">
         <Link href={`/blog/${post.id}`}>
-          <h2 className="text-[20px] font-bold leading-snug tracking-tight text-white transition-colors duration-300 group-hover:text-primary-1 md:text-[22px]">
+          <h2 className="text-[20px] font-bold leading-snug tracking-tight text-[#111111] transition-colors duration-300 group-hover:text-[#3E8655] md:text-[22px]">
             {post.title}
           </h2>
         </Link>
 
-        <p className="text-[15px] text-white/60">{post.author}</p>
+        <p className="text-[15px] text-gray-500">{post.author}</p>
       </div>
     </article>
   );
@@ -98,7 +98,7 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default function BlogPage() {
   return (
-    <main className="bg-dark min-h-screen">
+    <main>
       <BlogHero />
 
       <BlogGrid>

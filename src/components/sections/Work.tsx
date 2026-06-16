@@ -4,6 +4,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
+import {
+  ScrollReveal,
+} from "@/components/ui/ScrollReveal";
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 
 const SET_WIDTH = 1504;
@@ -61,7 +64,7 @@ export function Work() {
   return (
     <section id="work" className="py-20 bg-white select-none">
       <Container className="mb-14">
-        <div className="flex flex-col items-center text-center">
+        <ScrollReveal className="flex flex-col items-center text-center">
           <Heading
             as="h3"
             className="text-[48px] font-semibold tracking-tight text-[#0A0A0A]"
@@ -71,9 +74,10 @@ export function Work() {
           <p className="mt-4 text-[18px] font-semibold text-gray-500">
             A glimpse into our most impactful projects and success stories.
           </p>
-        </div>
+        </ScrollReveal>
       </Container>
 
+      <ScrollReveal amount={0.1}>
       <div className="relative max-w-[1200px] mx-auto overflow-hidden px-4">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-white via-white/20 to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-white via-white/20 to-transparent z-10" />
@@ -124,6 +128,7 @@ export function Work() {
           ))}
         </motion.div>
       </div>
+      </ScrollReveal>
     </section>
   );
 }
