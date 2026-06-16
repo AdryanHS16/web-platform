@@ -1,5 +1,10 @@
 import { Container } from "@/components/ui/Container";
 import {
+  ScrollReveal,
+  ScrollRevealGroup,
+  ScrollRevealItem,
+} from "@/components/ui/ScrollReveal";
+import {
   ServiceIconDigital,
   ServiceIconConsulting,
   ServiceIconLead,
@@ -59,7 +64,7 @@ export function Services() {
       />
 
       <Container className="relative z-10">
-        <div className="max-w-[1000px] mx-auto text-center mb-28 px-4">
+        <ScrollReveal className="max-w-[1000px] mx-auto text-center mb-28 px-4">
           <h2 className="text-[30px] md:text-[44px] lg:text-[46px] font-bold leading-[1.3] tracking-[-0.02em] text-[#111111]">
             At Upreach, we deliver real results through{" "}
             <br className="hidden lg:block" />
@@ -75,25 +80,23 @@ export function Services() {
               precision.
             </span>
           </h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" delay={0.1}>
           <h3 className="text-[35px] font-semibold text-[#111111] mb-2 tracking-tight">
             What we offer
           </h3>
           <p className="text-[#666666] text-[18px] font-semibold">
             Comprehensive solutions for business success.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <ScrollRevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service) => {
             const Icon = service.Icon;
             return (
-              <div
-                key={service.title}
-                className="group relative rounded-3xl bg-[#e8e8e8] p-8 md:p-10 flex flex-col gap-6 cursor-pointer transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1"
-              >
+              <ScrollRevealItem key={service.title}>
+                <div className="group relative rounded-3xl bg-[#e8e8e8] p-8 md:p-10 flex flex-col gap-6 cursor-pointer transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#111111] shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:text-[#3E8655] group-hover:bg-green-50">
                   <Icon width={20} height={20} />
                 </div>
@@ -107,9 +110,10 @@ export function Services() {
                   </p>
                 </div>
               </div>
+              </ScrollRevealItem>
             );
           })}
-        </div>
+        </ScrollRevealGroup>
       </Container>
     </section>
   );

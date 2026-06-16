@@ -4,6 +4,11 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
+import {
+  ScrollReveal,
+  ScrollRevealGroup,
+  ScrollRevealItem,
+} from "@/components/ui/ScrollReveal";
 
 const faqs = [
   {
@@ -52,7 +57,7 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-24 bg-white">
       <Container>
-        <div className="flex flex-col items-center text-center mb-14">
+        <ScrollReveal className="flex flex-col items-center text-center mb-14">
           <Heading
             as="h3"
             className="text-[48px] font-semibold tracking-tight text-[#0A0A0A]"
@@ -63,16 +68,14 @@ export function FAQ() {
             Find quick answers to common queries about our services, process,
             and how we can help you achieve your goals.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="mx-auto flex max-w-[760px] flex-col gap-4">
+        <ScrollRevealGroup className="mx-auto flex max-w-[760px] flex-col gap-4" stagger={0.08}>
           {faqs.map((faq, index) => {
             const isOpen = openItems.includes(index);
             return (
-              <div
-                key={index}
-                className="overflow-hidden rounded-2xl bg-[#f3f3f3]"
-              >
+              <ScrollRevealItem key={index}>
+                <div className="overflow-hidden rounded-2xl bg-[#f3f3f3]">
                 <button
                   type="button"
                   onClick={() => toggle(index)}
@@ -117,9 +120,10 @@ export function FAQ() {
                   )}
                 </AnimatePresence>
               </div>
+              </ScrollRevealItem>
             );
           })}
-        </div>
+        </ScrollRevealGroup>
       </Container>
     </section>
   );
