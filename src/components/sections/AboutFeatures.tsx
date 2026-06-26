@@ -87,7 +87,7 @@ function FeatureRow({ feature }: { feature: Feature }) {
 export function AboutFeatures() {
   return (
     <section className="bg-white py-20 md:py-28">
-      <Container className="px-6 lg:px-12">
+      <Container>
         <div className="flex flex-col gap-20 md:gap-28">
           {features.map((feature) => (
             <FeatureRow key={feature.title} feature={feature} />

@@ -27,22 +27,22 @@ export function Hero() {
     <section id="hero" className="relative bg-dark text-white overflow-hidden pt-22">
       {" "}
       <GridBackground />
-      <Container className="relative md:pt-10 md:pb-28">
-        <div className="relative flex items-center justify-between gap-12">
+      <Container className="relative pb-16 md:pt-10 md:pb-28">
+        <div className="relative flex flex-col items-center gap-12 text-center lg:flex-row lg:justify-between lg:text-left">
           {/* content left */}
           <div className="max-w-155">
-            <h1 className="text-[48px] md:text-[60px] mt-0 pt-0 font-semibold leading-[1.05] tracking-[-0.02em]">
+            <h1 className="text-[36px] sm:text-[48px] md:text-[60px] mt-0 pt-0 font-semibold leading-[1.05] tracking-[-0.02em]">
               Grow your business,
               <br />
               master every move.
             </h1>
 
-            <p className="mt-3 text-white/70 max-w-130 text-[18px] leading-7">
+            <p className="mt-3 text-white/70 max-w-130 text-[16px] sm:text-[18px] leading-7">
               Helping businesses thrive with innovative digital strategies,
               creative solutions, and measurable outcomes.
             </p>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
               <Button variant="primary" href="/contact-page">
                 Book a call
               </Button>
@@ -52,7 +52,7 @@ export function Hero() {
             </div>
 
             {/* Logos row */}
-            <div className="mt-24 relative w-full max-w-5xl overflow-hidden flex items-center h-20">
+            <div className="mt-12 lg:mt-24 relative w-full max-w-5xl overflow-hidden flex items-center h-20">
               <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-linear-to-r from-dark to-transparent z-10" />
               <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-linear-to-l from-dark to-transparent z-10" />
 

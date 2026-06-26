@@ -12,7 +12,7 @@ const sections = [
 export function Footer() {
   return (
     <footer className="bg-dark text-white">
-      <Container className="py-16 px-6 lg:px-12">
+      <Container className="py-16">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           {/* Brand + newsletter */}
           <div className="max-w-[420px]">

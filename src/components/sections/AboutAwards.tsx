@@ -34,7 +34,7 @@ export function AboutAwards() {
     <section className="relative overflow-hidden bg-dark text-white py-20 md:py-28">
       <GridBackground />
 
-      <Container className="relative z-10 px-6 lg:px-12">
+      <Container className="relative z-10">
         <ScrollReveal className="mx-auto max-w-[640px] text-center">
           <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em] text-white">
             Awards and Recognitions

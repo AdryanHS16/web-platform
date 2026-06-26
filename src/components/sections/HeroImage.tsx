@@ -8,7 +8,7 @@ import {
 
 export function HeroImage() {
   return (
-    <div className="relative w-101 h-128">
+    <div className="relative w-[290px] h-[370px] sm:w-[360px] sm:h-[460px] lg:w-101 lg:h-128">
       <div className="relative w-full h-full rounded-3xl overflow-hidden">
         <Image
           src="/img/hero-image.jpg"
@@ -37,7 +37,7 @@ export function HeroImage() {
       {/* Floating card 1 */}
       <div
         className="
-          absolute bottom-40 -left-15
+          absolute bottom-40 -left-3 sm:-left-8 lg:-left-15
           w-[205.906px] h-[57.5938px]
           flex flex-row items-center justify-start
           gap-3
@@ -68,7 +68,7 @@ export function HeroImage() {
       {/* Floating card 2 */}
       <div
         className="
-          absolute bottom-10 -left-15
+          absolute bottom-10 -left-3 sm:-left-8 lg:-left-15
           w-66.75 h-[93.1875px]
           flex flex-row items-center
           gap-3
