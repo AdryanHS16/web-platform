@@ -14,7 +14,7 @@ export default function ContactPage() {
     <main>
       <section className="relative overflow-hidden bg-dark text-white pt-32 pb-20 md:pt-40 md:pb-28">
         <GridBackground />
-        <Container className="relative z-10 px-6 text-center">
+        <Container className="relative z-10 text-center">
           <ScrollReveal>
             <h1 className="mx-auto max-w-[640px] text-[40px] md:text-[56px] font-medium leading-[1.1] tracking-[-0.01em]">
               Let&apos;s connect &amp; bring your{" "}
@@ -29,7 +29,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white py-16 md:py-20">
-        <Container className="px-6">
+        <Container>
           <ScrollReveal delay={0.1}>
             <ContactForm />
           </ScrollReveal>
