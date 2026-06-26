@@ -12,7 +12,7 @@ export function AboutHero() {
     >
       <GridBackground />
 
-      <Container className="relative z-10 px-6">
+      <Container className="relative z-10">
         <ScrollReveal className="mx-auto max-w-[680px] text-center">
           <h1 className="text-[34px] md:text-[52px] font-semibold leading-[1.05] tracking-[-0.02em]">
             Innovation meets <br className="hidden sm:block" />
