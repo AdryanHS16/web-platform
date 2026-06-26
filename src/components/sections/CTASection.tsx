@@ -55,7 +55,7 @@ export function CTASection({
 }: CTASectionProps) {
   if (embedded) {
     return (
-      <Container className="px-6 pb-10 md:pb-14">
+      <Container className="pb-10 md:pb-14">
         <CTACard large />
       </Container>
     );
@@ -73,7 +73,7 @@ export function CTASection({
           : sectionPadding
       }`}
     >
-      <Container className="px-6 lg:px-12">
+      <Container>
         <CTACard />
       </Container>
     </section>
