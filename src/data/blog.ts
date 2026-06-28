@@ -133,6 +133,38 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "omnichannel-marketing-why-consistency-is-the-new-currency",
+    category: "Marketing",
+    title: "Why Consistency is the New Currency",
+    excerpt:
+      "Customers move across channels effortlessly. A consistent experience everywhere is what turns attention into loyalty.",
+    author: "David Reilly",
+    role: "Brand Marketing Manager",
+    avatar: "https://i.pravatar.cc/150?img=33",
+    date: "March 22, 2025",
+    readingTime: "5 min read",
+    image: "/img/work-image3.avif",
+    content: [
+      {
+        paragraphs: [
+          "Your customers do not think in channels, they think in experiences. They might discover you on social media, research on your blog, and buy on their phone, all in a single afternoon. Consistency across those touchpoints is what makes the journey feel seamless.",
+        ],
+      },
+      {
+        heading: "One brand, every touchpoint",
+        paragraphs: [
+          "When your tone, visuals, and promises stay consistent everywhere, customers build a clear mental picture of who you are. That clarity reduces friction and makes every interaction feel familiar and trustworthy.",
+        ],
+      },
+      {
+        heading: "Consistency compounds over time",
+        paragraphs: [
+          "A single great ad fades quickly. A consistent presence, repeated across channels and over months, compounds into recognition and preference. Reliability is what keeps you top of mind when the customer is finally ready to buy.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
