@@ -165,6 +165,44 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "scaling-smart-strategies-to-grow-without-losing-focus",
+    category: "Business Growth",
+    title: "Strategies to Grow Without Losing Focus",
+    excerpt:
+      "Growth can pull a team in a dozen directions. Here is how to scale while staying true to what made you successful.",
+    author: "Jason Cole",
+    role: "Head of Strategy",
+    avatar: "https://i.pravatar.cc/150?img=15",
+    date: "March 5, 2025",
+    readingTime: "6 min read",
+    image: "/img/whyus-image.avif",
+    content: [
+      {
+        paragraphs: [
+          "Scaling a business is exciting, but rapid growth has a way of scattering attention. New opportunities arrive faster than you can evaluate them, and the very focus that drove early success starts to slip away. Sustainable growth means scaling with discipline.",
+        ],
+      },
+      {
+        heading: "Protect your core before expanding",
+        paragraphs: [
+          "Before chasing new markets, make sure the thing you already do well stays excellent. A strong core gives you the stability and revenue to experiment elsewhere without putting the business at risk.",
+        ],
+      },
+      {
+        heading: "Say no to stay sharp",
+        paragraphs: [
+          "Every yes is a commitment of time and energy. The fastest-growing teams are often the most selective, choosing a few high-impact bets over many scattered ones. Focus is a strategy, not a limitation.",
+        ],
+      },
+      {
+        heading: "Build systems that scale with you",
+        paragraphs: [
+          "Manual processes that work for ten customers break at a thousand. Investing early in repeatable systems and clear ownership lets your team grow without drowning in complexity.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
