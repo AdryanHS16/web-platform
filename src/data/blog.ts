@@ -203,6 +203,44 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "the-psychology-of-branding-how-to-build-deeper-connections",
+    category: "Branding",
+    title: "The Psychology of Branding: Build Connections",
+    excerpt:
+      "People do not just buy products, they buy meaning. Understand the psychology that turns customers into believers.",
+    author: "Mark Ellis",
+    role: "Creative Director",
+    avatar: "https://i.pravatar.cc/150?img=51",
+    date: "February 18, 2025",
+    readingTime: "7 min read",
+    image: "/img/work-image4.avif",
+    content: [
+      {
+        paragraphs: [
+          "The strongest brands are not built on features, they are built on feelings. Long before a customer compares specs or prices, they form an emotional impression of who you are. Understanding the psychology behind that impression is the key to building lasting connections.",
+        ],
+      },
+      {
+        heading: "Emotion drives decisions",
+        paragraphs: [
+          "Research consistently shows that people make decisions emotionally and justify them logically afterward. Brands that make people feel something, confident, inspired, understood, earn loyalty that price alone never could.",
+        ],
+      },
+      {
+        heading: "Consistency creates familiarity",
+        paragraphs: [
+          "Familiarity breeds trust. When your brand shows up the same way again and again, it becomes a reassuring constant in the customer's life, and that reassurance is the bedrock of a deeper relationship.",
+        ],
+      },
+      {
+        heading: "Stand for something real",
+        paragraphs: [
+          "A clear point of view gives people something to belong to. Brands with genuine values attract customers who share them, turning ordinary buyers into advocates who carry your message for you.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
