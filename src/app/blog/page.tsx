@@ -4,6 +4,7 @@ import { BlogHero } from "@/components/sections/BlogHero";
 import { BlogGrid } from "@/components/sections/BlogGrid";
 import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/sections/Footer";
+import { blogPosts, type BlogPost } from "@/data/blog";
 
 export const metadata = {
   title: "Blog - Upreach",
@@ -11,63 +12,10 @@ export const metadata = {
     "Expert marketing insights, industry trends, and actionable strategies to scale and grow your business.",
 };
 
-interface BlogPost {
-  id: string;
-  image: string;
-  category: string;
-  title: string;
-  author: string;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: "creating-content-that-converts",
-    image: "/img/work-image4.avif",
-    category: "Content Creation",
-    title: "Creating Content That Converts: Writing with Purpose",
-    author: "Sarah Mitchell",
-  },
-  {
-    id: "customer-data-improve-behavior",
-    image: "/img/work-image1.avif",
-    category: "Marketing",
-    title: "How to Use Customer Data to Improve Behavior",
-    author: "James Chen",
-  },
-  {
-    id: "seo-trends-2024",
-    image: "/img/work-image2.avif",
-    category: "Marketing",
-    title: "SEO Trends 2024: What to Watch for Greater Visibility",
-    author: "Emily Rodriguez",
-  },
-  {
-    id: "consistency-new-currency",
-    image: "/img/work-image3.avif",
-    category: "Retention",
-    title: "Why Consistency is the New Currency",
-    author: "David Thompson",
-  },
-  {
-    id: "grow-without-losing-focus",
-    image: "/img/whyus-image.avif",
-    category: "Strategy",
-    title: "Strategies to Grow Without Losing Focus",
-    author: "Lisa Park",
-  },
-  {
-    id: "psychology-of-branding",
-    image: "/img/work-image4.avif",
-    category: "Branding",
-    title: "The Psychology of Branding: Build Connections",
-    author: "Michael Foster",
-  },
-];
-
 function BlogCard({ post }: { post: BlogPost }) {
   return (
     <article className="group flex w-full flex-col gap-5">
-      <Link href={`/blog/${post.id}`} className="block">
+      <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative aspect-16/10 overflow-hidden rounded-[20px] border border-black/5 bg-grey">
           <Image
             src={post.image}
@@ -84,7 +32,7 @@ function BlogCard({ post }: { post: BlogPost }) {
       </Link>
 
       <div className="flex flex-col gap-2 px-1">
-        <Link href={`/blog/${post.id}`}>
+        <Link href={`/blog/${post.slug}`}>
           <h2 className="text-[20px] font-bold leading-snug tracking-tight text-[#111111] transition-colors duration-300 group-hover:text-[#3E8655] md:text-[22px]">
             {post.title}
           </h2>
@@ -103,7 +51,7 @@ export default function BlogPage() {
 
       <BlogGrid>
         {blogPosts.map((post) => (
-          <BlogCard key={post.id} post={post} />
+          <BlogCard key={post.slug} post={post} />
         ))}
       </BlogGrid>
 
