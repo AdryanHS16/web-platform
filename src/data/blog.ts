@@ -57,6 +57,44 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-to-use-customer-data-to-improve-retention",
+    category: "Retention",
+    title: "How to Use Customer Data to Improve Retention",
+    excerpt:
+      "Acquiring a customer is only the beginning. Use the data you already have to keep them coming back and growing with you.",
+    author: "Adam Brooks",
+    role: "Growth Analyst",
+    avatar: "https://i.pravatar.cc/150?img=13",
+    date: "April 28, 2025",
+    readingTime: "7 min read",
+    image: "/img/work-image1.avif",
+    content: [
+      {
+        paragraphs: [
+          "It costs far more to win a new customer than to keep an existing one, yet most teams pour their energy into acquisition. The good news is that the data needed to improve retention is usually already sitting in your systems, waiting to be put to work.",
+        ],
+      },
+      {
+        heading: "Identify the signals that predict churn",
+        paragraphs: [
+          "Customers rarely leave without warning. Drops in usage, fewer logins, or unanswered emails are early signals. By tracking these behaviors, you can reach out before a customer disengages rather than after they are gone.",
+        ],
+      },
+      {
+        heading: "Segment by behavior, not just demographics",
+        paragraphs: [
+          "Two customers with identical profiles can have completely different needs. Grouping people by how they actually use your product lets you tailor messaging, offers, and support to what each segment values most.",
+        ],
+      },
+      {
+        heading: "Turn insights into timely action",
+        paragraphs: [
+          "Data only matters if it changes what you do. Build simple, repeatable workflows that trigger the right message at the right moment, a check-in after a quiet week, a tip when a feature goes unused, a thank you after a milestone.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
