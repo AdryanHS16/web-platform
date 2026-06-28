@@ -95,6 +95,44 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "seo-trends-2025-what-to-watch-for-greater-visibility",
+    category: "Marketing",
+    title: "SEO Trends 2025: What to Watch for Greater Visibility",
+    excerpt:
+      "Search is changing fast. Here are the shifts that will define visibility in 2025 and how to stay ahead of them.",
+    author: "Daniel Foster",
+    role: "SEO Lead",
+    avatar: "https://i.pravatar.cc/150?img=8",
+    date: "April 10, 2025",
+    readingTime: "8 min read",
+    image: "/img/work-image2.avif",
+    content: [
+      {
+        paragraphs: [
+          "Search engines are evolving faster than ever, and the tactics that worked a few years ago are quickly losing ground. To stay visible in 2025, marketers need to focus on intent, experience, and trust rather than keywords alone.",
+        ],
+      },
+      {
+        heading: "Search intent beats keyword density",
+        paragraphs: [
+          "Modern search engines understand meaning, not just matching strings. Content that genuinely answers the question behind a query will outrank pages stuffed with the right phrases but missing real substance.",
+        ],
+      },
+      {
+        heading: "Experience is a ranking factor",
+        paragraphs: [
+          "Page speed, mobile usability, and a clean reading experience are no longer optional. A fast, accessible site keeps visitors engaged and sends strong quality signals to search engines.",
+        ],
+      },
+      {
+        heading: "Authority is built, not bought",
+        paragraphs: [
+          "Demonstrating expertise, citing credible sources, and earning genuine mentions across the web all reinforce your authority. In 2025, trust is the currency that turns rankings into lasting visibility.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
