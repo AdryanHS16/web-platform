@@ -43,17 +43,17 @@ export function Comparison() {
           </p>
         </ScrollReveal>
 
-        <ScrollRevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto px-4" stagger={0.15}>
-          <ScrollRevealItem>
-            <div className="rounded-[24px] border border-white/10 bg-[#FFFFFF0A] p-8 md:p-10">
+        <ScrollRevealGroup className="grid grid-cols-1 items-stretch md:grid-cols-2 gap-6 max-w-[900px] mx-auto px-4" stagger={0.15}>
+          <ScrollRevealItem className="flex h-full">
+            <div className="flex h-full w-full flex-col rounded-[24px] border border-white/10 bg-[#FFFFFF0A] p-8 md:p-10">
               <h3 className="text-center text-[22px] font-semibold tracking-tight text-white/80 mb-8">
                 Others Agencies
               </h3>
 
-              <ul className="flex flex-col gap-5">
+              <ul className="flex flex-1 flex-col gap-5">
                 {othersAgencies.map((point) => (
-                  <li key={point} className="flex items-center gap-3">
-                    <span className="shrink-0 text-white/35">
+                  <li key={point} className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-white/35">
                       <CompareIconClose width={20} height={20} />
                     </span>
                     <span className="text-[15px] leading-normal text-white/55">
@@ -65,8 +65,8 @@ export function Comparison() {
             </div>
           </ScrollRevealItem>
 
-          <ScrollRevealItem>
-            <div className="relative overflow-hidden rounded-[24px] border border-primary-2/40 bg-linear-to-br from-primary-2/25 via-primary-2/5 to-transparent p-8 md:p-10">
+          <ScrollRevealItem className="flex h-full">
+            <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[24px] border border-primary-2/40 bg-linear-to-br from-primary-2/25 via-primary-2/5 to-transparent p-8 md:p-10">
               <div
                 className="pointer-events-none absolute -top-16 -right-10 w-[260px] h-[260px] bg-primary-2/25 blur-[90px] rounded-full"
                 aria-hidden="true"
@@ -79,10 +79,10 @@ export function Comparison() {
                 Upreach
               </h3>
 
-              <ul className="relative flex flex-col gap-5">
+              <ul className="relative flex flex-1 flex-col gap-5">
                 {upreachPoints.map((point) => (
-                  <li key={point} className="flex items-center gap-3">
-                    <span className="shrink-0 text-primary-1">
+                  <li key={point} className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-primary-1">
                       <CompareIconCheck width={20} height={20} />
                     </span>
                     <span className="text-[15px] leading-normal text-white/90">
